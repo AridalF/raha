@@ -41,7 +41,12 @@ import sklearn.feature_extraction
 import raha
 ########################################
 
+###
+import time
+from datetime import timedelta
 
+from memory_profiler import profile
+###
 ########################################
 class Detection:
     """
@@ -226,6 +231,7 @@ class Detection:
             columns_features_list.append(feature_vectors)
         d.column_features = columns_features_list
 
+    #@profile
     def build_clusters(self, d):
         """
         This method builds clusters.
@@ -403,7 +409,12 @@ class Detection:
             print("------------------------------------------------------------------------\n"
                   "---------------Building the Hierarchical Clustering Model---------------\n"
                   "------------------------------------------------------------------------")
+        start_time = time.time()
         self.build_clusters(d)
+        elapsed_time_secs = time.time() - start_time
+        #msg = "Execution for build clusters took: %s secs (Wall clock time)" % timedelta(seconds=round(elapsed_time_secs), microseconds=elapsed_time_secs)
+        msg = "Execution for build clusters took: %s secs" % elapsed_time_secs
+        print(msg) 
         if self.VERBOSE:
             print("------------------------------------------------------------------------\n"
                   "-------------Iterative Clustering-Based Sampling and Labeling-----------\n"
@@ -444,11 +455,14 @@ if __name__ == "__main__":
         "path": os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, "datasets", dataset_name, "dirty.csv")),
         "clean_path": os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, "datasets", dataset_name, "clean.csv"))
     }
-    app = Detection()
-    detection_dictionary = app.run(dataset_dictionary)
-    data = raha.dataset.Dataset(dataset_dictionary)
-    p, r, f = data.get_data_cleaning_evaluation(detection_dictionary)[:3]
-    print("Raha's performance on {}:\nPrecision = {:.2f}\nRecall = {:.2f}\nF1 = {:.2f}".format(data.name, p, r, f))
+    for x in range(1, 11):
+        print("################################ Run = ", x , "#################################")
+        app = Detection()
+        detection_dictionary = app.run(dataset_dictionary)
+        data = raha.dataset.Dataset(dataset_dictionary)
+        p, r, f = data.get_data_cleaning_evaluation(detection_dictionary)[:3]
+        print("Raha's performance on {}:\nPrecision = {:.2f}\nRecall = {:.2f}\nF1 = {:.2f}".format(data.name, p, r, f))
+        print("############################################################################ ")
     # --------------------
     # app.STRATEGY_FILTERING = True
     # app.HISTORICAL_DATASETS = [
