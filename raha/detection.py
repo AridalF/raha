@@ -230,6 +230,7 @@ class Detection:
         """
         This method builds clusters.
         """
+	print("test")
         clustering_results = []
         for j in range(d.dataframe.shape[1]):
             feature_vectors = d.column_features[j]
