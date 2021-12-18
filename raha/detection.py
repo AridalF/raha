@@ -275,8 +275,8 @@ class Detection:
             cells_clusters_k_ce = {k: {} for k in range(2, self.LABELING_BUDGET + 2)}
             try:
                 for k in clusters_k_c_ce:
-                    model_labels = [l - 1 for l in (delayed)(dask_ml.cluster.KMeans)(n_clusters=k, init='k-means||', init_max_iter=2, oversampling_factor=10).fit(feature_vectors)]
-                    #model_labels = [l - 1 for l in dask_ml.cluster.KMeans(n_clusters=k, init='k-means||', init_max_iter=2, oversampling_factor=10).fit(feature_vectors)]
+                    #model_labels = [l - 1 for l in (delayed)(dask_ml.cluster.KMeans)(n_clusters=k, init='k-means||', init_max_iter=2, oversampling_factor=10).fit(feature_vectors)]
+                    model_labels = [l - 1 for l in dask_ml.cluster.KMeans(n_clusters=k, init='k-means||', init_max_iter=2, oversampling_factor=10).fit(feature_vectors)]
                     for index, c in enumerate(model_labels):
                         if c not in clusters_k_c_ce[k]:
                             clusters_k_c_ce[k][c] = {}
@@ -304,8 +304,8 @@ class Detection:
             cells_clusters_k_ce = {k: {} for k in range(2, self.LABELING_BUDGET + 2)}
             try:
                 for k in clusters_k_c_ce:
-                    #model_labels = [l - 1 for l in (delayed)(sklearn.cluster.Birch)(n_clusters = k, threshold = 1.5).fit_predict(feature_vectors)]
-                    model_labels = [l - 1 for l in sklearn.cluster.Birch(n_clusters = k, threshold = 1.5).fit_predict(feature_vectors)]
+                    model_labels = [l - 1 for l in (delayed)(sklearn.cluster.Birch)(branching_factor=50, n_clusters = k, threshold = 1.5).fit_predict(feature_vectors)]
+                    #model_labels = [l - 1 for l in sklearn.cluster.Birch(branching_factor=50, n_clusters = k, threshold = 1.5).fit_predict(feature_vectors)]
                     for index, c in enumerate(model_labels):
                         if c not in clusters_k_c_ce[k]:
                             clusters_k_c_ce[k][c] = {}
@@ -471,7 +471,7 @@ class Detection:
                   "------------------------------------------------------------------------")
         start_time = time.time()
         #self.build_clusters(d)
-        self.build_clusters_birch_lb(d)
+        self.build_clusters_kmeans_lb(d)
         elapsed_time_secs = time.time() - start_time
         #msg = "Execution for build clusters took: %s secs (Wall clock time)" % timedelta(seconds=round(elapsed_time_secs), microseconds=elapsed_time_secs)
         msg = "Execution for build clusters took: %s secs" % elapsed_time_secs
@@ -510,7 +510,7 @@ class Detection:
 
 ########################################
 if __name__ == "__main__":
-    dataset_name = "beers"
+    dataset_name = "rayyan"
     dataset_dictionary = {
         "name": dataset_name,
         "path": os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, "datasets", dataset_name, "dirty.csv")),
