@@ -304,8 +304,8 @@ class Detection:
             cells_clusters_k_ce = {k: {} for k in range(2, self.LABELING_BUDGET + 2)}
             try:
                 for k in clusters_k_c_ce:
-                    model_labels = [l - 1 for l in (delayed)(sklearn.cluster.Birch)(n_clusters = k, threshold = 1.5).fit_predict(feature_vectors)]
-                    #model_labels = [l - 1 for l in sklearn.cluster.Birch(n_clusters = k, threshold = 1.5).fit_predict(feature_vectors)]
+                    #model_labels = [l - 1 for l in (delayed)(sklearn.cluster.Birch)(n_clusters = k, threshold = 1.5).fit_predict(feature_vectors)]
+                    model_labels = [l - 1 for l in sklearn.cluster.Birch(n_clusters = k, threshold = 1.5).fit_predict(feature_vectors)]
                     for index, c in enumerate(model_labels):
                         if c not in clusters_k_c_ce[k]:
                             clusters_k_c_ce[k][c] = {}
@@ -510,7 +510,7 @@ class Detection:
 
 ########################################
 if __name__ == "__main__":
-    dataset_name = "movies_1"
+    dataset_name = "beers"
     dataset_dictionary = {
         "name": dataset_name,
         "path": os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, "datasets", dataset_name, "dirty.csv")),
