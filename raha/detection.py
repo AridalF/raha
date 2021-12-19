@@ -471,7 +471,7 @@ class Detection:
                   "------------------------------------------------------------------------")
         start_time = time.time()
         #self.build_clusters(d)
-        self.build_clusters_kmeans_lb(d)
+        self.build_clusters_birch_lb(d)
         elapsed_time_secs = time.time() - start_time
         #msg = "Execution for build clusters took: %s secs (Wall clock time)" % timedelta(seconds=round(elapsed_time_secs), microseconds=elapsed_time_secs)
         msg = "Execution for build clusters took: %s secs" % elapsed_time_secs
@@ -510,7 +510,7 @@ class Detection:
 
 ########################################
 if __name__ == "__main__":
-    dataset_name = "rayyan"
+    dataset_name = "tax"
     dataset_dictionary = {
         "name": dataset_name,
         "path": os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, "datasets", dataset_name, "dirty.csv")),
