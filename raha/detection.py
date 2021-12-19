@@ -322,6 +322,53 @@ class Detection:
         d.cells_clusters_k_j_ce = {k: {j: clustering_results[j][1][k] for j in range(d.dataframe.shape[1])} for k in
                                    range(2, self.LABELING_BUDGET + 2)}
 
+
+    def elbow_method_sse(self, features):
+        sse=[]
+        for l in range(1, 10):
+            km = sklearn.cluster.KMeans(n_clusters=l)
+            km.fit(features)
+            sse.append(km.inertia_)
+        return sse
+
+    def optimal_k(self, sse):
+        sse_copy=sse
+        sse_copy.sort(reverse=True)
+        print(sse_copy)
+        optimum_k=sse_copy.index(sse_copy[2])
+        return optimum_k
+
+
+    def build_clusters_kmeans_elbow_m(self, d):
+            clustering_results = []  # creating a empty list to addd the results
+            for j in range(d.dataframe.shape[1]):  # running loop for the number of columns in data
+                feature_vectors = d.column_features[j]  # selecting one by one feature (column) for the processing
+                clusters_k_c_ce = {k: {} for k in range(2, self.LABELING_BUDGET + 2)} # Creating dictionary for 20 as per Label Budget
+                cells_clusters_k_ce = {k: {} for k in range(2, self.LABELING_BUDGET + 2)}
+                inter_intertia=self.elbow_method_sse(feature_vectors)
+                print(inter_intertia)
+                elbow_method_k=self.optimal_k(inter_intertia)
+                print(elbow_method_k)
+                try:
+                    for k in clusters_k_c_ce:
+                        model_labels = [l - 1 for l in sklearn.cluster.KMeans(n_clusters=elbow_method_k).fit_predict(feature_vectors)]
+                        for index, c in enumerate(model_labels):
+                            if c not in clusters_k_c_ce[k]:
+                                clusters_k_c_ce[k][c] = {}
+                            cell = (index, j)
+                            clusters_k_c_ce[k][c][cell] = 1
+                            cells_clusters_k_ce[k][cell] = c
+                except:
+                    pass
+                if self.VERBOSE:
+                    print("K means clustering using the Elbow method model is built for column {}.".format(j))
+                clustering_results.append([clusters_k_c_ce, cells_clusters_k_ce])
+            d.clusters_k_j_c_ce = {k: {j: clustering_results[j][0][k] for j in range(d.dataframe.shape[1])} for k in
+                                range(2, self.LABELING_BUDGET + 2)}
+            d.cells_clusters_k_j_ce = {k: {j: clustering_results[j][1][k] for j in range(d.dataframe.shape[1])} for k in
+                                    range(2, self.LABELING_BUDGET + 2)}
+
+
     def sample_tuple(self, d):
         """
         This method samples a tuple.
@@ -471,7 +518,7 @@ class Detection:
                   "------------------------------------------------------------------------")
         start_time = time.time()
         #self.build_clusters(d)
-        self.build_clusters_birch_lb(d)
+        self.build_clusters(d)
         elapsed_time_secs = time.time() - start_time
         #msg = "Execution for build clusters took: %s secs (Wall clock time)" % timedelta(seconds=round(elapsed_time_secs), microseconds=elapsed_time_secs)
         msg = "Execution for build clusters took: %s secs" % elapsed_time_secs
