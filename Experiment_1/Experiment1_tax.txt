@@ -1,0 +1,1401 @@
+################################ Run =  1 #################################
+------------------------------------------------------------------------
+---------------------Initializing the Dataset Object--------------------
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+-------------------Running Error Detection Strategies-------------------
+------------------------------------------------------------------------
+I just load strategies' results as they have already been run on the dataset!
+501 strategy profiles are collected.
+------------------------------------------------------------------------
+-----------------------Generating Feature Vectors-----------------------
+------------------------------------------------------------------------
+82 Features are generated for column 0.
+84 Features are generated for column 1.
+9 Features are generated for column 2.
+24 Features are generated for column 3.
+26 Features are generated for column 4.
+81 Features are generated for column 5.
+73 Features are generated for column 6.
+27 Features are generated for column 7.
+11 Features are generated for column 8.
+11 Features are generated for column 9.
+42 Features are generated for column 10.
+47 Features are generated for column 11.
+52 Features are generated for column 12.
+47 Features are generated for column 13.
+51 Features are generated for column 14.
+------------------------------------------------------------------------
+---------------Building the Hierarchical Clustering Model---------------
+------------------------------------------------------------------------
+A hierarchical clustering model is built for column 0.
+A hierarchical clustering model is built for column 1.
+A hierarchical clustering model is built for column 2.
+A hierarchical clustering model is built for column 3.
+A hierarchical clustering model is built for column 4.
+A hierarchical clustering model is built for column 5.
+A hierarchical clustering model is built for column 6.
+A hierarchical clustering model is built for column 7.
+A hierarchical clustering model is built for column 8.
+A hierarchical clustering model is built for column 9.
+A hierarchical clustering model is built for column 10.
+A hierarchical clustering model is built for column 11.
+A hierarchical clustering model is built for column 12.
+A hierarchical clustering model is built for column 13.
+A hierarchical clustering model is built for column 14.
+Execution for build clusters took: 24208.935075759888 secs
+------------------------------------------------------------------------
+-------------Iterative Clustering-Based Sampling and Labeling-----------
+------------------------------------------------------------------------
+Tuple 5230 is sampled.
+Tuple 5230 is labeled.
+------------------------------------------------------------------------
+Tuple 46891 is sampled.
+Tuple 46891 is labeled.
+------------------------------------------------------------------------
+Tuple 87628 is sampled.
+Tuple 87628 is labeled.
+------------------------------------------------------------------------
+Tuple 138706 is sampled.
+Tuple 138706 is labeled.
+------------------------------------------------------------------------
+Tuple 160404 is sampled.
+Tuple 160404 is labeled.
+------------------------------------------------------------------------
+Tuple 148692 is sampled.
+Tuple 148692 is labeled.
+------------------------------------------------------------------------
+Tuple 6526 is sampled.
+Tuple 6526 is labeled.
+------------------------------------------------------------------------
+Tuple 55662 is sampled.
+Tuple 55662 is labeled.
+------------------------------------------------------------------------
+Tuple 60003 is sampled.
+Tuple 60003 is labeled.
+------------------------------------------------------------------------
+Tuple 130558 is sampled.
+Tuple 130558 is labeled.
+------------------------------------------------------------------------
+Tuple 76277 is sampled.
+Tuple 76277 is labeled.
+------------------------------------------------------------------------
+Tuple 110423 is sampled.
+Tuple 110423 is labeled.
+------------------------------------------------------------------------
+Tuple 156061 is sampled.
+Tuple 156061 is labeled.
+------------------------------------------------------------------------
+Tuple 154452 is sampled.
+Tuple 154452 is labeled.
+------------------------------------------------------------------------
+Tuple 191886 is sampled.
+Tuple 191886 is labeled.
+------------------------------------------------------------------------
+Tuple 46555 is sampled.
+Tuple 46555 is labeled.
+------------------------------------------------------------------------
+Tuple 182857 is sampled.
+Tuple 182857 is labeled.
+------------------------------------------------------------------------
+Tuple 29285 is sampled.
+Tuple 29285 is labeled.
+------------------------------------------------------------------------
+Tuple 69215 is sampled.
+Tuple 69215 is labeled.
+------------------------------------------------------------------------
+Tuple 162242 is sampled.
+Tuple 162242 is labeled.
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+--------------Propagating User Labels Through the Clusters--------------
+------------------------------------------------------------------------
+The number of labeled data cells increased from 300 to 2587336.
+------------------------------------------------------------------------
+---------------Training and Testing Classification Models---------------
+------------------------------------------------------------------------
+A classifier is trained and applied on column 0.
+A classifier is trained and applied on column 1.
+A classifier is trained and applied on column 2.
+A classifier is trained and applied on column 3.
+A classifier is trained and applied on column 4.
+A classifier is trained and applied on column 5.
+A classifier is trained and applied on column 6.
+A classifier is trained and applied on column 7.
+A classifier is trained and applied on column 8.
+A classifier is trained and applied on column 9.
+A classifier is trained and applied on column 10.
+A classifier is trained and applied on column 11.
+A classifier is trained and applied on column 12.
+A classifier is trained and applied on column 13.
+A classifier is trained and applied on column 14.
+------------------------------------------------------------------------
+---------------------------Storing the Results--------------------------
+------------------------------------------------------------------------
+The results are stored in /home/aridal/raha/datasets/tax/raha-baran-results-tax/error-detection/detection.dataset.
+Raha's performance on tax:
+Precision = 1.00
+Recall = 0.98
+F1 = 0.99
+############################################################################ 
+################################ Run =  2 #################################
+------------------------------------------------------------------------
+---------------------Initializing the Dataset Object--------------------
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+-------------------Running Error Detection Strategies-------------------
+------------------------------------------------------------------------
+I just load strategies' results as they have already been run on the dataset!
+501 strategy profiles are collected.
+------------------------------------------------------------------------
+-----------------------Generating Feature Vectors-----------------------
+------------------------------------------------------------------------
+82 Features are generated for column 0.
+84 Features are generated for column 1.
+9 Features are generated for column 2.
+24 Features are generated for column 3.
+26 Features are generated for column 4.
+81 Features are generated for column 5.
+73 Features are generated for column 6.
+27 Features are generated for column 7.
+11 Features are generated for column 8.
+11 Features are generated for column 9.
+42 Features are generated for column 10.
+47 Features are generated for column 11.
+52 Features are generated for column 12.
+47 Features are generated for column 13.
+51 Features are generated for column 14.
+------------------------------------------------------------------------
+---------------Building the Hierarchical Clustering Model---------------
+------------------------------------------------------------------------
+A hierarchical clustering model is built for column 0.
+A hierarchical clustering model is built for column 1.
+A hierarchical clustering model is built for column 2.
+A hierarchical clustering model is built for column 3.
+A hierarchical clustering model is built for column 4.
+A hierarchical clustering model is built for column 5.
+A hierarchical clustering model is built for column 6.
+A hierarchical clustering model is built for column 7.
+A hierarchical clustering model is built for column 8.
+A hierarchical clustering model is built for column 9.
+A hierarchical clustering model is built for column 10.
+A hierarchical clustering model is built for column 11.
+A hierarchical clustering model is built for column 12.
+A hierarchical clustering model is built for column 13.
+A hierarchical clustering model is built for column 14.
+Execution for build clusters took: 24094.392204999924 secs
+------------------------------------------------------------------------
+-------------Iterative Clustering-Based Sampling and Labeling-----------
+------------------------------------------------------------------------
+Tuple 179142 is sampled.
+Tuple 179142 is labeled.
+------------------------------------------------------------------------
+Tuple 92376 is sampled.
+Tuple 92376 is labeled.
+------------------------------------------------------------------------
+Tuple 194932 is sampled.
+Tuple 194932 is labeled.
+------------------------------------------------------------------------
+Tuple 96024 is sampled.
+Tuple 96024 is labeled.
+------------------------------------------------------------------------
+Tuple 174829 is sampled.
+Tuple 174829 is labeled.
+------------------------------------------------------------------------
+Tuple 23635 is sampled.
+Tuple 23635 is labeled.
+------------------------------------------------------------------------
+Tuple 62609 is sampled.
+Tuple 62609 is labeled.
+------------------------------------------------------------------------
+Tuple 61886 is sampled.
+Tuple 61886 is labeled.
+------------------------------------------------------------------------
+Tuple 172370 is sampled.
+Tuple 172370 is labeled.
+------------------------------------------------------------------------
+Tuple 156431 is sampled.
+Tuple 156431 is labeled.
+------------------------------------------------------------------------
+Tuple 133066 is sampled.
+Tuple 133066 is labeled.
+------------------------------------------------------------------------
+Tuple 96070 is sampled.
+Tuple 96070 is labeled.
+------------------------------------------------------------------------
+Tuple 89552 is sampled.
+Tuple 89552 is labeled.
+------------------------------------------------------------------------
+Tuple 98810 is sampled.
+Tuple 98810 is labeled.
+------------------------------------------------------------------------
+Tuple 13696 is sampled.
+Tuple 13696 is labeled.
+------------------------------------------------------------------------
+Tuple 107561 is sampled.
+Tuple 107561 is labeled.
+------------------------------------------------------------------------
+Tuple 161832 is sampled.
+Tuple 161832 is labeled.
+------------------------------------------------------------------------
+Tuple 127899 is sampled.
+Tuple 127899 is labeled.
+------------------------------------------------------------------------
+Tuple 63669 is sampled.
+Tuple 63669 is labeled.
+------------------------------------------------------------------------
+Tuple 190654 is sampled.
+Tuple 190654 is labeled.
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+--------------Propagating User Labels Through the Clusters--------------
+------------------------------------------------------------------------
+The number of labeled data cells increased from 300 to 2589678.
+------------------------------------------------------------------------
+---------------Training and Testing Classification Models---------------
+------------------------------------------------------------------------
+A classifier is trained and applied on column 0.
+A classifier is trained and applied on column 1.
+A classifier is trained and applied on column 2.
+A classifier is trained and applied on column 3.
+A classifier is trained and applied on column 4.
+A classifier is trained and applied on column 5.
+A classifier is trained and applied on column 6.
+A classifier is trained and applied on column 7.
+A classifier is trained and applied on column 8.
+A classifier is trained and applied on column 9.
+A classifier is trained and applied on column 10.
+A classifier is trained and applied on column 11.
+A classifier is trained and applied on column 12.
+A classifier is trained and applied on column 13.
+A classifier is trained and applied on column 14.
+------------------------------------------------------------------------
+---------------------------Storing the Results--------------------------
+------------------------------------------------------------------------
+The results are stored in /home/aridal/raha/datasets/tax/raha-baran-results-tax/error-detection/detection.dataset.
+Raha's performance on tax:
+Precision = 1.00
+Recall = 0.94
+F1 = 0.97
+############################################################################ 
+################################ Run =  3 #################################
+------------------------------------------------------------------------
+---------------------Initializing the Dataset Object--------------------
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+-------------------Running Error Detection Strategies-------------------
+------------------------------------------------------------------------
+I just load strategies' results as they have already been run on the dataset!
+501 strategy profiles are collected.
+------------------------------------------------------------------------
+-----------------------Generating Feature Vectors-----------------------
+------------------------------------------------------------------------
+82 Features are generated for column 0.
+84 Features are generated for column 1.
+9 Features are generated for column 2.
+24 Features are generated for column 3.
+26 Features are generated for column 4.
+81 Features are generated for column 5.
+73 Features are generated for column 6.
+27 Features are generated for column 7.
+11 Features are generated for column 8.
+11 Features are generated for column 9.
+42 Features are generated for column 10.
+47 Features are generated for column 11.
+52 Features are generated for column 12.
+47 Features are generated for column 13.
+51 Features are generated for column 14.
+------------------------------------------------------------------------
+---------------Building the Hierarchical Clustering Model---------------
+------------------------------------------------------------------------
+A hierarchical clustering model is built for column 0.
+A hierarchical clustering model is built for column 1.
+A hierarchical clustering model is built for column 2.
+A hierarchical clustering model is built for column 3.
+A hierarchical clustering model is built for column 4.
+A hierarchical clustering model is built for column 5.
+A hierarchical clustering model is built for column 6.
+A hierarchical clustering model is built for column 7.
+A hierarchical clustering model is built for column 8.
+A hierarchical clustering model is built for column 9.
+A hierarchical clustering model is built for column 10.
+A hierarchical clustering model is built for column 11.
+A hierarchical clustering model is built for column 12.
+A hierarchical clustering model is built for column 13.
+A hierarchical clustering model is built for column 14.
+Execution for build clusters took: 24084.645761966705 secs
+------------------------------------------------------------------------
+-------------Iterative Clustering-Based Sampling and Labeling-----------
+------------------------------------------------------------------------
+Tuple 67729 is sampled.
+Tuple 67729 is labeled.
+------------------------------------------------------------------------
+Tuple 5009 is sampled.
+Tuple 5009 is labeled.
+------------------------------------------------------------------------
+Tuple 177922 is sampled.
+Tuple 177922 is labeled.
+------------------------------------------------------------------------
+Tuple 167938 is sampled.
+Tuple 167938 is labeled.
+------------------------------------------------------------------------
+Tuple 131968 is sampled.
+Tuple 131968 is labeled.
+------------------------------------------------------------------------
+Tuple 182547 is sampled.
+Tuple 182547 is labeled.
+------------------------------------------------------------------------
+Tuple 114268 is sampled.
+Tuple 114268 is labeled.
+------------------------------------------------------------------------
+Tuple 92882 is sampled.
+Tuple 92882 is labeled.
+------------------------------------------------------------------------
+Tuple 197854 is sampled.
+Tuple 197854 is labeled.
+------------------------------------------------------------------------
+Tuple 32267 is sampled.
+Tuple 32267 is labeled.
+------------------------------------------------------------------------
+Tuple 127008 is sampled.
+Tuple 127008 is labeled.
+------------------------------------------------------------------------
+Tuple 52243 is sampled.
+Tuple 52243 is labeled.
+------------------------------------------------------------------------
+Tuple 195846 is sampled.
+Tuple 195846 is labeled.
+------------------------------------------------------------------------
+Tuple 114039 is sampled.
+Tuple 114039 is labeled.
+------------------------------------------------------------------------
+Tuple 118139 is sampled.
+Tuple 118139 is labeled.
+------------------------------------------------------------------------
+Tuple 44182 is sampled.
+Tuple 44182 is labeled.
+------------------------------------------------------------------------
+Tuple 94429 is sampled.
+Tuple 94429 is labeled.
+------------------------------------------------------------------------
+Tuple 61258 is sampled.
+Tuple 61258 is labeled.
+------------------------------------------------------------------------
+Tuple 32286 is sampled.
+Tuple 32286 is labeled.
+------------------------------------------------------------------------
+Tuple 156556 is sampled.
+Tuple 156556 is labeled.
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+--------------Propagating User Labels Through the Clusters--------------
+------------------------------------------------------------------------
+The number of labeled data cells increased from 300 to 2528405.
+------------------------------------------------------------------------
+---------------Training and Testing Classification Models---------------
+------------------------------------------------------------------------
+A classifier is trained and applied on column 0.
+A classifier is trained and applied on column 1.
+A classifier is trained and applied on column 2.
+A classifier is trained and applied on column 3.
+A classifier is trained and applied on column 4.
+A classifier is trained and applied on column 5.
+A classifier is trained and applied on column 6.
+A classifier is trained and applied on column 7.
+A classifier is trained and applied on column 8.
+A classifier is trained and applied on column 9.
+A classifier is trained and applied on column 10.
+A classifier is trained and applied on column 11.
+A classifier is trained and applied on column 12.
+A classifier is trained and applied on column 13.
+A classifier is trained and applied on column 14.
+------------------------------------------------------------------------
+---------------------------Storing the Results--------------------------
+------------------------------------------------------------------------
+The results are stored in /home/aridal/raha/datasets/tax/raha-baran-results-tax/error-detection/detection.dataset.
+Raha's performance on tax:
+Precision = 0.52
+Recall = 0.79
+F1 = 0.63
+############################################################################ 
+################################ Run =  4 #################################
+------------------------------------------------------------------------
+---------------------Initializing the Dataset Object--------------------
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+-------------------Running Error Detection Strategies-------------------
+------------------------------------------------------------------------
+I just load strategies' results as they have already been run on the dataset!
+501 strategy profiles are collected.
+------------------------------------------------------------------------
+-----------------------Generating Feature Vectors-----------------------
+------------------------------------------------------------------------
+82 Features are generated for column 0.
+84 Features are generated for column 1.
+9 Features are generated for column 2.
+24 Features are generated for column 3.
+26 Features are generated for column 4.
+81 Features are generated for column 5.
+73 Features are generated for column 6.
+27 Features are generated for column 7.
+11 Features are generated for column 8.
+11 Features are generated for column 9.
+42 Features are generated for column 10.
+47 Features are generated for column 11.
+52 Features are generated for column 12.
+47 Features are generated for column 13.
+51 Features are generated for column 14.
+------------------------------------------------------------------------
+---------------Building the Hierarchical Clustering Model---------------
+------------------------------------------------------------------------
+^CA hierarchical clustering model is built for column 0.
+A hierarchical clustering model is built for column 1.
+A hierarchical clustering model is built for column 2.
+A hierarchical clustering model is built for column 3.
+A hierarchical clustering model is built for column 4.
+A hierarchical clustering model is built for column 5.
+A hierarchical clustering model is built for column 6.
+A hierarchical clustering model is built for column 7.
+A hierarchical clustering model is built for column 8.
+A hierarchical clustering model is built for column 9.
+A hierarchical clustering model is built for column 10.
+A hierarchical clustering model is built for column 11.
+A hierarchical clustering model is built for column 12.
+A hierarchical clustering model is built for column 13.
+A hierarchical clustering model is built for column 14.
+Execution for build clusters took: 24110.469770908356 secs
+------------------------------------------------------------------------
+-------------Iterative Clustering-Based Sampling and Labeling-----------
+------------------------------------------------------------------------
+Tuple 89583 is sampled.
+Tuple 89583 is labeled.
+------------------------------------------------------------------------
+Tuple 83846 is sampled.
+Tuple 83846 is labeled.
+------------------------------------------------------------------------
+Tuple 91444 is sampled.
+Tuple 91444 is labeled.
+------------------------------------------------------------------------
+Tuple 71394 is sampled.
+Tuple 71394 is labeled.
+------------------------------------------------------------------------
+Tuple 4431 is sampled.
+Tuple 4431 is labeled.
+------------------------------------------------------------------------
+Tuple 97833 is sampled.
+Tuple 97833 is labeled.
+------------------------------------------------------------------------
+Tuple 4191 is sampled.
+Tuple 4191 is labeled.
+------------------------------------------------------------------------
+Tuple 182953 is sampled.
+Tuple 182953 is labeled.
+------------------------------------------------------------------------
+Tuple 179579 is sampled.
+Tuple 179579 is labeled.
+------------------------------------------------------------------------
+Tuple 90286 is sampled.
+Tuple 90286 is labeled.
+------------------------------------------------------------------------
+Tuple 153199 is sampled.
+Tuple 153199 is labeled.
+------------------------------------------------------------------------
+Tuple 58078 is sampled.
+Tuple 58078 is labeled.
+------------------------------------------------------------------------
+Tuple 16816 is sampled.
+Tuple 16816 is labeled.
+------------------------------------------------------------------------
+Tuple 52715 is sampled.
+Tuple 52715 is labeled.
+------------------------------------------------------------------------
+Tuple 74973 is sampled.
+Tuple 74973 is labeled.
+------------------------------------------------------------------------
+Tuple 114728 is sampled.
+Tuple 114728 is labeled.
+------------------------------------------------------------------------
+Tuple 33246 is sampled.
+Tuple 33246 is labeled.
+------------------------------------------------------------------------
+Tuple 40902 is sampled.
+Tuple 40902 is labeled.
+------------------------------------------------------------------------
+Tuple 48522 is sampled.
+Tuple 48522 is labeled.
+------------------------------------------------------------------------
+Tuple 181805 is sampled.
+Tuple 181805 is labeled.
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+--------------Propagating User Labels Through the Clusters--------------
+------------------------------------------------------------------------
+The number of labeled data cells increased from 300 to 2400994.
+------------------------------------------------------------------------
+---------------Training and Testing Classification Models---------------
+------------------------------------------------------------------------
+A classifier is trained and applied on column 0.
+A classifier is trained and applied on column 1.
+A classifier is trained and applied on column 2.
+A classifier is trained and applied on column 3.
+A classifier is trained and applied on column 4.
+A classifier is trained and applied on column 5.
+A classifier is trained and applied on column 6.
+A classifier is trained and applied on column 7.
+A classifier is trained and applied on column 8.
+A classifier is trained and applied on column 9.
+A classifier is trained and applied on column 10.
+A classifier is trained and applied on column 11.
+A classifier is trained and applied on column 12.
+A classifier is trained and applied on column 13.
+A classifier is trained and applied on column 14.
+------------------------------------------------------------------------
+---------------------------Storing the Results--------------------------
+------------------------------------------------------------------------
+The results are stored in /home/aridal/raha/datasets/tax/raha-baran-results-tax/error-detection/detection.dataset.
+Raha's performance on tax:
+Precision = 1.00
+Recall = 0.94
+F1 = 0.97
+############################################################################ 
+################################ Run =  5 #################################
+------------------------------------------------------------------------
+---------------------Initializing the Dataset Object--------------------
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+-------------------Running Error Detection Strategies-------------------
+------------------------------------------------------------------------
+I just load strategies' results as they have already been run on the dataset!
+501 strategy profiles are collected.
+------------------------------------------------------------------------
+-----------------------Generating Feature Vectors-----------------------
+------------------------------------------------------------------------
+82 Features are generated for column 0.
+84 Features are generated for column 1.
+9 Features are generated for column 2.
+24 Features are generated for column 3.
+26 Features are generated for column 4.
+81 Features are generated for column 5.
+73 Features are generated for column 6.
+27 Features are generated for column 7.
+11 Features are generated for column 8.
+11 Features are generated for column 9.
+42 Features are generated for column 10.
+47 Features are generated for column 11.
+52 Features are generated for column 12.
+47 Features are generated for column 13.
+51 Features are generated for column 14.
+------------------------------------------------------------------------
+---------------Building the Hierarchical Clustering Model---------------
+------------------------------------------------------------------------
+A hierarchical clustering model is built for column 0.
+A hierarchical clustering model is built for column 1.
+A hierarchical clustering model is built for column 2.
+A hierarchical clustering model is built for column 3.
+A hierarchical clustering model is built for column 4.
+A hierarchical clustering model is built for column 5.
+A hierarchical clustering model is built for column 6.
+A hierarchical clustering model is built for column 7.
+A hierarchical clustering model is built for column 8.
+A hierarchical clustering model is built for column 9.
+A hierarchical clustering model is built for column 10.
+A hierarchical clustering model is built for column 11.
+A hierarchical clustering model is built for column 12.
+A hierarchical clustering model is built for column 13.
+A hierarchical clustering model is built for column 14.
+Execution for build clusters took: 24228.199202299118 secs
+------------------------------------------------------------------------
+-------------Iterative Clustering-Based Sampling and Labeling-----------
+------------------------------------------------------------------------
+Tuple 15746 is sampled.
+Tuple 15746 is labeled.
+------------------------------------------------------------------------
+Tuple 48434 is sampled.
+Tuple 48434 is labeled.
+------------------------------------------------------------------------
+Tuple 66315 is sampled.
+Tuple 66315 is labeled.
+------------------------------------------------------------------------
+Tuple 72550 is sampled.
+Tuple 72550 is labeled.
+------------------------------------------------------------------------
+Tuple 114268 is sampled.
+Tuple 114268 is labeled.
+------------------------------------------------------------------------
+Tuple 139628 is sampled.
+Tuple 139628 is labeled.
+------------------------------------------------------------------------
+Tuple 58393 is sampled.
+Tuple 58393 is labeled.
+------------------------------------------------------------------------
+Tuple 51702 is sampled.
+Tuple 51702 is labeled.
+------------------------------------------------------------------------
+Tuple 25000 is sampled.
+Tuple 25000 is labeled.
+------------------------------------------------------------------------
+Tuple 46964 is sampled.
+Tuple 46964 is labeled.
+------------------------------------------------------------------------
+Tuple 153072 is sampled.
+Tuple 153072 is labeled.
+------------------------------------------------------------------------
+Tuple 144815 is sampled.
+Tuple 144815 is labeled.
+------------------------------------------------------------------------
+Tuple 53842 is sampled.
+Tuple 53842 is labeled.
+------------------------------------------------------------------------
+Tuple 190719 is sampled.
+Tuple 190719 is labeled.
+------------------------------------------------------------------------
+Tuple 151729 is sampled.
+Tuple 151729 is labeled.
+------------------------------------------------------------------------
+Tuple 90189 is sampled.
+Tuple 90189 is labeled.
+------------------------------------------------------------------------
+Tuple 109603 is sampled.
+Tuple 109603 is labeled.
+------------------------------------------------------------------------
+Tuple 73177 is sampled.
+Tuple 73177 is labeled.
+------------------------------------------------------------------------
+Tuple 170008 is sampled.
+Tuple 170008 is labeled.
+------------------------------------------------------------------------
+Tuple 89997 is sampled.
+Tuple 89997 is labeled.
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+--------------Propagating User Labels Through the Clusters--------------
+------------------------------------------------------------------------
+The number of labeled data cells increased from 300 to 2634097.
+------------------------------------------------------------------------
+---------------Training and Testing Classification Models---------------
+------------------------------------------------------------------------
+A classifier is trained and applied on column 0.
+A classifier is trained and applied on column 1.
+A classifier is trained and applied on column 2.
+A classifier is trained and applied on column 3.
+A classifier is trained and applied on column 4.
+A classifier is trained and applied on column 5.
+A classifier is trained and applied on column 6.
+A classifier is trained and applied on column 7.
+A classifier is trained and applied on column 8.
+A classifier is trained and applied on column 9.
+A classifier is trained and applied on column 10.
+A classifier is trained and applied on column 11.
+A classifier is trained and applied on column 12.
+A classifier is trained and applied on column 13.
+A classifier is trained and applied on column 14.
+------------------------------------------------------------------------
+---------------------------Storing the Results--------------------------
+------------------------------------------------------------------------
+The results are stored in /home/aridal/raha/datasets/tax/raha-baran-results-tax/error-detection/detection.dataset.
+Raha's performance on tax:
+Precision = 0.94
+Recall = 0.97
+F1 = 0.96
+############################################################################ 
+################################ Run =  6 #################################
+------------------------------------------------------------------------
+---------------------Initializing the Dataset Object--------------------
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+-------------------Running Error Detection Strategies-------------------
+------------------------------------------------------------------------
+I just load strategies' results as they have already been run on the dataset!
+501 strategy profiles are collected.
+------------------------------------------------------------------------
+-----------------------Generating Feature Vectors-----------------------
+------------------------------------------------------------------------
+82 Features are generated for column 0.
+84 Features are generated for column 1.
+9 Features are generated for column 2.
+24 Features are generated for column 3.
+26 Features are generated for column 4.
+81 Features are generated for column 5.
+73 Features are generated for column 6.
+27 Features are generated for column 7.
+11 Features are generated for column 8.
+11 Features are generated for column 9.
+42 Features are generated for column 10.
+47 Features are generated for column 11.
+52 Features are generated for column 12.
+47 Features are generated for column 13.
+51 Features are generated for column 14.
+------------------------------------------------------------------------
+---------------Building the Hierarchical Clustering Model---------------
+------------------------------------------------------------------------
+A hierarchical clustering model is built for column 0.
+A hierarchical clustering model is built for column 1.
+A hierarchical clustering model is built for column 2.
+A hierarchical clustering model is built for column 3.
+A hierarchical clustering model is built for column 4.
+A hierarchical clustering model is built for column 5.
+A hierarchical clustering model is built for column 6.
+A hierarchical clustering model is built for column 7.
+A hierarchical clustering model is built for column 8.
+A hierarchical clustering model is built for column 9.
+A hierarchical clustering model is built for column 10.
+A hierarchical clustering model is built for column 11.
+A hierarchical clustering model is built for column 12.
+A hierarchical clustering model is built for column 13.
+A hierarchical clustering model is built for column 14.
+Execution for build clusters took: 24112.166670084 secs
+------------------------------------------------------------------------
+-------------Iterative Clustering-Based Sampling and Labeling-----------
+------------------------------------------------------------------------
+Tuple 26012 is sampled.
+Tuple 26012 is labeled.
+------------------------------------------------------------------------
+Tuple 30086 is sampled.
+Tuple 30086 is labeled.
+------------------------------------------------------------------------
+Tuple 136507 is sampled.
+Tuple 136507 is labeled.
+------------------------------------------------------------------------
+Tuple 139958 is sampled.
+Tuple 139958 is labeled.
+------------------------------------------------------------------------
+Tuple 27185 is sampled.
+Tuple 27185 is labeled.
+------------------------------------------------------------------------
+Tuple 129114 is sampled.
+Tuple 129114 is labeled.
+------------------------------------------------------------------------
+Tuple 190161 is sampled.
+Tuple 190161 is labeled.
+------------------------------------------------------------------------
+Tuple 195060 is sampled.
+Tuple 195060 is labeled.
+------------------------------------------------------------------------
+Tuple 144815 is sampled.
+Tuple 144815 is labeled.
+------------------------------------------------------------------------
+Tuple 29302 is sampled.
+Tuple 29302 is labeled.
+------------------------------------------------------------------------
+Tuple 18883 is sampled.
+Tuple 18883 is labeled.
+------------------------------------------------------------------------
+Tuple 78090 is sampled.
+Tuple 78090 is labeled.
+------------------------------------------------------------------------
+Tuple 121877 is sampled.
+Tuple 121877 is labeled.
+------------------------------------------------------------------------
+Tuple 57287 is sampled.
+Tuple 57287 is labeled.
+------------------------------------------------------------------------
+Tuple 195895 is sampled.
+Tuple 195895 is labeled.
+------------------------------------------------------------------------
+Tuple 32414 is sampled.
+Tuple 32414 is labeled.
+------------------------------------------------------------------------
+Tuple 188346 is sampled.
+Tuple 188346 is labeled.
+------------------------------------------------------------------------
+Tuple 129464 is sampled.
+Tuple 129464 is labeled.
+------------------------------------------------------------------------
+Tuple 29847 is sampled.
+Tuple 29847 is labeled.
+------------------------------------------------------------------------
+Tuple 19768 is sampled.
+Tuple 19768 is labeled.
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+--------------Propagating User Labels Through the Clusters--------------
+------------------------------------------------------------------------
+The number of labeled data cells increased from 300 to 2631719.
+------------------------------------------------------------------------
+---------------Training and Testing Classification Models---------------
+------------------------------------------------------------------------
+A classifier is trained and applied on column 0.
+A classifier is trained and applied on column 1.
+A classifier is trained and applied on column 2.
+A classifier is trained and applied on column 3.
+A classifier is trained and applied on column 4.
+A classifier is trained and applied on column 5.
+A classifier is trained and applied on column 6.
+A classifier is trained and applied on column 7.
+A classifier is trained and applied on column 8.
+A classifier is trained and applied on column 9.
+A classifier is trained and applied on column 10.
+A classifier is trained and applied on column 11.
+A classifier is trained and applied on column 12.
+A classifier is trained and applied on column 13.
+A classifier is trained and applied on column 14.
+------------------------------------------------------------------------
+---------------------------Storing the Results--------------------------
+------------------------------------------------------------------------
+The results are stored in /home/aridal/raha/datasets/tax/raha-baran-results-tax/error-detection/detection.dataset.
+Raha's performance on tax:
+Precision = 0.97
+Recall = 0.97
+F1 = 0.97
+############################################################################ 
+################################ Run =  7 #################################
+------------------------------------------------------------------------
+---------------------Initializing the Dataset Object--------------------
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+-------------------Running Error Detection Strategies-------------------
+------------------------------------------------------------------------
+I just load strategies' results as they have already been run on the dataset!
+501 strategy profiles are collected.
+------------------------------------------------------------------------
+-----------------------Generating Feature Vectors-----------------------
+------------------------------------------------------------------------
+82 Features are generated for column 0.
+84 Features are generated for column 1.
+9 Features are generated for column 2.
+24 Features are generated for column 3.
+26 Features are generated for column 4.
+81 Features are generated for column 5.
+73 Features are generated for column 6.
+27 Features are generated for column 7.
+11 Features are generated for column 8.
+11 Features are generated for column 9.
+42 Features are generated for column 10.
+47 Features are generated for column 11.
+52 Features are generated for column 12.
+47 Features are generated for column 13.
+51 Features are generated for column 14.
+------------------------------------------------------------------------
+---------------Building the Hierarchical Clustering Model---------------
+------------------------------------------------------------------------
+A hierarchical clustering model is built for column 0.
+A hierarchical clustering model is built for column 1.
+A hierarchical clustering model is built for column 2.
+A hierarchical clustering model is built for column 3.
+A hierarchical clustering model is built for column 4.
+A hierarchical clustering model is built for column 5.
+A hierarchical clustering model is built for column 6.
+A hierarchical clustering model is built for column 7.
+A hierarchical clustering model is built for column 8.
+A hierarchical clustering model is built for column 9.
+A hierarchical clustering model is built for column 10.
+A hierarchical clustering model is built for column 11.
+A hierarchical clustering model is built for column 12.
+A hierarchical clustering model is built for column 13.
+A hierarchical clustering model is built for column 14.
+Execution for build clusters took: 24134.023428201675 secs
+------------------------------------------------------------------------
+-------------Iterative Clustering-Based Sampling and Labeling-----------
+------------------------------------------------------------------------
+Tuple 122269 is sampled.
+Tuple 122269 is labeled.
+------------------------------------------------------------------------
+Tuple 133033 is sampled.
+Tuple 133033 is labeled.
+------------------------------------------------------------------------
+Tuple 53345 is sampled.
+Tuple 53345 is labeled.
+------------------------------------------------------------------------
+Tuple 5133 is sampled.
+Tuple 5133 is labeled.
+------------------------------------------------------------------------
+Tuple 119069 is sampled.
+Tuple 119069 is labeled.
+------------------------------------------------------------------------
+Tuple 74845 is sampled.
+Tuple 74845 is labeled.
+------------------------------------------------------------------------
+Tuple 101416 is sampled.
+Tuple 101416 is labeled.
+------------------------------------------------------------------------
+Tuple 35958 is sampled.
+Tuple 35958 is labeled.
+------------------------------------------------------------------------
+Tuple 56772 is sampled.
+Tuple 56772 is labeled.
+------------------------------------------------------------------------
+Tuple 22659 is sampled.
+Tuple 22659 is labeled.
+------------------------------------------------------------------------
+Tuple 26063 is sampled.
+Tuple 26063 is labeled.
+------------------------------------------------------------------------
+Tuple 177807 is sampled.
+Tuple 177807 is labeled.
+------------------------------------------------------------------------
+Tuple 99614 is sampled.
+Tuple 99614 is labeled.
+------------------------------------------------------------------------
+Tuple 16086 is sampled.
+Tuple 16086 is labeled.
+------------------------------------------------------------------------
+Tuple 117809 is sampled.
+Tuple 117809 is labeled.
+------------------------------------------------------------------------
+Tuple 159835 is sampled.
+Tuple 159835 is labeled.
+------------------------------------------------------------------------
+Tuple 198492 is sampled.
+Tuple 198492 is labeled.
+------------------------------------------------------------------------
+Tuple 92809 is sampled.
+Tuple 92809 is labeled.
+------------------------------------------------------------------------
+Tuple 191914 is sampled.
+Tuple 191914 is labeled.
+------------------------------------------------------------------------
+Tuple 14026 is sampled.
+Tuple 14026 is labeled.
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+--------------Propagating User Labels Through the Clusters--------------
+------------------------------------------------------------------------
+The number of labeled data cells increased from 300 to 2579521.
+------------------------------------------------------------------------
+---------------Training and Testing Classification Models---------------
+------------------------------------------------------------------------
+A classifier is trained and applied on column 0.
+A classifier is trained and applied on column 1.
+A classifier is trained and applied on column 2.
+A classifier is trained and applied on column 3.
+A classifier is trained and applied on column 4.
+A classifier is trained and applied on column 5.
+A classifier is trained and applied on column 6.
+A classifier is trained and applied on column 7.
+A classifier is trained and applied on column 8.
+A classifier is trained and applied on column 9.
+A classifier is trained and applied on column 10.
+A classifier is trained and applied on column 11.
+A classifier is trained and applied on column 12.
+A classifier is trained and applied on column 13.
+A classifier is trained and applied on column 14.
+------------------------------------------------------------------------
+---------------------------Storing the Results--------------------------
+------------------------------------------------------------------------
+The results are stored in /home/aridal/raha/datasets/tax/raha-baran-results-tax/error-detection/detection.dataset.
+Raha's performance on tax:
+Precision = 0.84
+Recall = 0.97
+F1 = 0.90
+############################################################################ 
+################################ Run =  8 #################################
+------------------------------------------------------------------------
+---------------------Initializing the Dataset Object--------------------
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+-------------------Running Error Detection Strategies-------------------
+------------------------------------------------------------------------
+I just load strategies' results as they have already been run on the dataset!
+501 strategy profiles are collected.
+------------------------------------------------------------------------
+-----------------------Generating Feature Vectors-----------------------
+------------------------------------------------------------------------
+82 Features are generated for column 0.
+84 Features are generated for column 1.
+9 Features are generated for column 2.
+24 Features are generated for column 3.
+26 Features are generated for column 4.
+81 Features are generated for column 5.
+73 Features are generated for column 6.
+27 Features are generated for column 7.
+11 Features are generated for column 8.
+11 Features are generated for column 9.
+42 Features are generated for column 10.
+47 Features are generated for column 11.
+52 Features are generated for column 12.
+47 Features are generated for column 13.
+51 Features are generated for column 14.
+------------------------------------------------------------------------
+---------------Building the Hierarchical Clustering Model---------------
+------------------------------------------------------------------------
+A hierarchical clustering model is built for column 0.
+A hierarchical clustering model is built for column 1.
+A hierarchical clustering model is built for column 2.
+A hierarchical clustering model is built for column 3.
+A hierarchical clustering model is built for column 4.
+A hierarchical clustering model is built for column 5.
+A hierarchical clustering model is built for column 6.
+A hierarchical clustering model is built for column 7.
+A hierarchical clustering model is built for column 8.
+A hierarchical clustering model is built for column 9.
+A hierarchical clustering model is built for column 10.
+A hierarchical clustering model is built for column 11.
+A hierarchical clustering model is built for column 12.
+A hierarchical clustering model is built for column 13.
+A hierarchical clustering model is built for column 14.
+Execution for build clusters took: 24130.984975099564 secs
+------------------------------------------------------------------------
+-------------Iterative Clustering-Based Sampling and Labeling-----------
+------------------------------------------------------------------------
+Tuple 186189 is sampled.
+Tuple 186189 is labeled.
+------------------------------------------------------------------------
+Tuple 37000 is sampled.
+Tuple 37000 is labeled.
+------------------------------------------------------------------------
+Tuple 161822 is sampled.
+Tuple 161822 is labeled.
+------------------------------------------------------------------------
+Tuple 81621 is sampled.
+Tuple 81621 is labeled.
+------------------------------------------------------------------------
+Tuple 66686 is sampled.
+Tuple 66686 is labeled.
+------------------------------------------------------------------------
+Tuple 151283 is sampled.
+Tuple 151283 is labeled.
+------------------------------------------------------------------------
+Tuple 138752 is sampled.
+Tuple 138752 is labeled.
+------------------------------------------------------------------------
+Tuple 152934 is sampled.
+Tuple 152934 is labeled.
+------------------------------------------------------------------------
+Tuple 147045 is sampled.
+Tuple 147045 is labeled.
+------------------------------------------------------------------------
+Tuple 183149 is sampled.
+Tuple 183149 is labeled.
+------------------------------------------------------------------------
+Tuple 50510 is sampled.
+Tuple 50510 is labeled.
+------------------------------------------------------------------------
+Tuple 127956 is sampled.
+Tuple 127956 is labeled.
+------------------------------------------------------------------------
+Tuple 163698 is sampled.
+Tuple 163698 is labeled.
+------------------------------------------------------------------------
+Tuple 55605 is sampled.
+Tuple 55605 is labeled.
+------------------------------------------------------------------------
+Tuple 107540 is sampled.
+Tuple 107540 is labeled.
+------------------------------------------------------------------------
+Tuple 188054 is sampled.
+Tuple 188054 is labeled.
+------------------------------------------------------------------------
+Tuple 48741 is sampled.
+Tuple 48741 is labeled.
+------------------------------------------------------------------------
+Tuple 57332 is sampled.
+Tuple 57332 is labeled.
+------------------------------------------------------------------------
+Tuple 17502 is sampled.
+Tuple 17502 is labeled.
+------------------------------------------------------------------------
+Tuple 66189 is sampled.
+Tuple 66189 is labeled.
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+--------------Propagating User Labels Through the Clusters--------------
+------------------------------------------------------------------------
+The number of labeled data cells increased from 300 to 2635987.
+------------------------------------------------------------------------
+---------------Training and Testing Classification Models---------------
+------------------------------------------------------------------------
+A classifier is trained and applied on column 0.
+A classifier is trained and applied on column 1.
+A classifier is trained and applied on column 2.
+A classifier is trained and applied on column 3.
+A classifier is trained and applied on column 4.
+A classifier is trained and applied on column 5.
+A classifier is trained and applied on column 6.
+A classifier is trained and applied on column 7.
+A classifier is trained and applied on column 8.
+A classifier is trained and applied on column 9.
+A classifier is trained and applied on column 10.
+A classifier is trained and applied on column 11.
+A classifier is trained and applied on column 12.
+A classifier is trained and applied on column 13.
+A classifier is trained and applied on column 14.
+------------------------------------------------------------------------
+---------------------------Storing the Results--------------------------
+------------------------------------------------------------------------
+The results are stored in /home/aridal/raha/datasets/tax/raha-baran-results-tax/error-detection/detection.dataset.
+Raha's performance on tax:
+Precision = 0.91
+Recall = 0.97
+F1 = 0.94
+############################################################################ 
+################################ Run =  9 #################################
+------------------------------------------------------------------------
+---------------------Initializing the Dataset Object--------------------
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+-------------------Running Error Detection Strategies-------------------
+------------------------------------------------------------------------
+I just load strategies' results as they have already been run on the dataset!
+501 strategy profiles are collected.
+------------------------------------------------------------------------
+-----------------------Generating Feature Vectors-----------------------
+------------------------------------------------------------------------
+82 Features are generated for column 0.
+84 Features are generated for column 1.
+9 Features are generated for column 2.
+24 Features are generated for column 3.
+26 Features are generated for column 4.
+81 Features are generated for column 5.
+73 Features are generated for column 6.
+27 Features are generated for column 7.
+11 Features are generated for column 8.
+11 Features are generated for column 9.
+42 Features are generated for column 10.
+47 Features are generated for column 11.
+52 Features are generated for column 12.
+47 Features are generated for column 13.
+51 Features are generated for column 14.
+------------------------------------------------------------------------
+---------------Building the Hierarchical Clustering Model---------------
+------------------------------------------------------------------------
+A hierarchical clustering model is built for column 0.
+A hierarchical clustering model is built for column 1.
+A hierarchical clustering model is built for column 2.
+A hierarchical clustering model is built for column 3.
+A hierarchical clustering model is built for column 4.
+A hierarchical clustering model is built for column 5.
+A hierarchical clustering model is built for column 6.
+A hierarchical clustering model is built for column 7.
+A hierarchical clustering model is built for column 8.
+A hierarchical clustering model is built for column 9.
+A hierarchical clustering model is built for column 10.
+A hierarchical clustering model is built for column 11.
+A hierarchical clustering model is built for column 12.
+A hierarchical clustering model is built for column 13.
+A hierarchical clustering model is built for column 14.
+Execution for build clusters took: 24081.57293868065 secs
+------------------------------------------------------------------------
+-------------Iterative Clustering-Based Sampling and Labeling-----------
+------------------------------------------------------------------------
+Tuple 13323 is sampled.
+Tuple 13323 is labeled.
+------------------------------------------------------------------------
+Tuple 38774 is sampled.
+Tuple 38774 is labeled.
+------------------------------------------------------------------------
+Tuple 193784 is sampled.
+Tuple 193784 is labeled.
+------------------------------------------------------------------------
+Tuple 173500 is sampled.
+Tuple 173500 is labeled.
+------------------------------------------------------------------------
+Tuple 55686 is sampled.
+Tuple 55686 is labeled.
+------------------------------------------------------------------------
+Tuple 15844 is sampled.
+Tuple 15844 is labeled.
+------------------------------------------------------------------------
+Tuple 4192 is sampled.
+Tuple 4192 is labeled.
+------------------------------------------------------------------------
+Tuple 29456 is sampled.
+Tuple 29456 is labeled.
+------------------------------------------------------------------------
+Tuple 42714 is sampled.
+Tuple 42714 is labeled.
+------------------------------------------------------------------------
+Tuple 195634 is sampled.
+Tuple 195634 is labeled.
+------------------------------------------------------------------------
+Tuple 116977 is sampled.
+Tuple 116977 is labeled.
+------------------------------------------------------------------------
+Tuple 145732 is sampled.
+Tuple 145732 is labeled.
+------------------------------------------------------------------------
+Tuple 68831 is sampled.
+Tuple 68831 is labeled.
+------------------------------------------------------------------------
+Tuple 126847 is sampled.
+Tuple 126847 is labeled.
+------------------------------------------------------------------------
+Tuple 363 is sampled.
+Tuple 363 is labeled.
+------------------------------------------------------------------------
+Tuple 108989 is sampled.
+Tuple 108989 is labeled.
+------------------------------------------------------------------------
+Tuple 4079 is sampled.
+Tuple 4079 is labeled.
+------------------------------------------------------------------------
+Tuple 144930 is sampled.
+Tuple 144930 is labeled.
+------------------------------------------------------------------------
+Tuple 14515 is sampled.################################ Run =  10 #################################
+------------------------------------------------------------------------
+---------------------Initializing the Dataset Object--------------------
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+-------------------Running Error Detection Strategies-------------------
+------------------------------------------------------------------------
+I just load strategies' results as they have already been run on the dataset!
+501 strategy profiles are collected.
+------------------------------------------------------------------------
+-----------------------Generating Feature Vectors-----------------------
+------------------------------------------------------------------------
+82 Features are generated for column 0.
+84 Features are generated for column 1.
+9 Features are generated for column 2.
+24 Features are generated for column 3.
+26 Features are generated for column 4.
+81 Features are generated for column 5.
+73 Features are generated for column 6.
+27 Features are generated for column 7.
+11 Features are generated for column 8.
+11 Features are generated for column 9.
+42 Features are generated for column 10.
+47 Features are generated for column 11.
+52 Features are generated for column 12.
+47 Features are generated for column 13.
+51 Features are generated for column 14.
+------------------------------------------------------------------------
+---------------Building the Hierarchical Clustering Model---------------
+------------------------------------------------------------------------
+A hierarchical clustering model is built for column 0.
+A hierarchical clustering model is built for column 1.
+A hierarchical clustering model is built for column 2.
+A hierarchical clustering model is built for column 3.
+A hierarchical clustering model is built for column 4.
+A hierarchical clustering model is built for column 5.
+A hierarchical clustering model is built for column 6.
+A hierarchical clustering model is built for column 7.
+A hierarchical clustering model is built for column 8.
+A hierarchical clustering model is built for column 9.
+A hierarchical clustering model is built for column 10.
+A hierarchical clustering model is built for column 11.
+A hierarchical clustering model is built for column 12.
+A hierarchical clustering model is built for column 13.
+A hierarchical clustering model is built for column 14.
+Execution for build clusters took: 24096.740537405014 secs
+------------------------------------------------------------------------
+-------------Iterative Clustering-Based Sampling and Labeling-----------
+------------------------------------------------------------------------
+Tuple 84401 is sampled.
+Tuple 84401 is labeled.
+------------------------------------------------------------------------
+Tuple 115373 is sampled.
+Tuple 115373 is labeled.
+------------------------------------------------------------------------
+Tuple 191914 is sampled.
+Tuple 191914 is labeled.
+------------------------------------------------------------------------
+Tuple 15641 is sampled.
+Tuple 15641 is labeled.
+------------------------------------------------------------------------
+Tuple 52383 is sampled.
+Tuple 52383 is labeled.
+------------------------------------------------------------------------
+Tuple 68145 is sampled.
+Tuple 68145 is labeled.
+------------------------------------------------------------------------
+Tuple 175462 is sampled.
+Tuple 175462 is labeled.
+------------------------------------------------------------------------
+Tuple 43252 is sampled.
+Tuple 43252 is labeled.
+------------------------------------------------------------------------
+Tuple 56729 is sampled.
+Tuple 56729 is labeled.
+------------------------------------------------------------------------
+Tuple 25805 is sampled.
+Tuple 25805 is labeled.
+------------------------------------------------------------------------
+Tuple 185930 is sampled.
+Tuple 185930 is labeled.
+------------------------------------------------------------------------
+Tuple 174375 is sampled.
+Tuple 174375 is labeled.
+------------------------------------------------------------------------
+Tuple 8171 is sampled.
+Tuple 8171 is labeled.
+------------------------------------------------------------------------
+Tuple 190267 is sampled.
+Tuple 190267 is labeled.
+------------------------------------------------------------------------
+Tuple 146089 is sampled.
+Tuple 146089 is labeled.
+------------------------------------------------------------------------
+Tuple 121419 is sampled.
+Tuple 121419 is labeled.
+------------------------------------------------------------------------
+Tuple 68479 is sampled.
+Tuple 68479 is labeled.
+------------------------------------------------------------------------
+Tuple 992 is sampled.
+Tuple 992 is labeled.
+------------------------------------------------------------------------
+Tuple 45021 is sampled.
+Tuple 45021 is labeled.
+------------------------------------------------------------------------
+Tuple 127440 is sampled.
+Tuple 127440 is labeled.
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+--------------Propagating User Labels Through the Clusters--------------
+------------------------------------------------------------------------
+The number of labeled data cells increased from 300 to 2605694.
+------------------------------------------------------------------------
+---------------Training and Testing Classification Models---------------
+------------------------------------------------------------------------
+A classifier is trained and applied on column 0.
+A classifier is trained and applied on column 1.
+A classifier is trained and applied on column 2.
+A classifier is trained and applied on column 3.
+A classifier is trained and applied on column 4.
+A classifier is trained and applied on column 5.
+A classifier is trained and applied on column 6.
+A classifier is trained and applied on column 7.
+A classifier is trained and applied on column 8.
+A classifier is trained and applied on column 9.
+A classifier is trained and applied on column 10.
+A classifier is trained and applied on column 11.
+A classifier is trained and applied on column 12.
+A classifier is trained and applied on column 13.
+A classifier is trained and applied on column 14.
+------------------------------------------------------------------------
+---------------------------Storing the Results--------------------------
+------------------------------------------------------------------------
+The results are stored in /home/aridal/raha/datasets/tax/raha-baran-results-tax/error-detection/detection.dataset.
+Raha's performance on tax:
+Precision = 0.96
+Recall = 0.97
+F1 = 0.97
+############################################################################ 
+
+Tuple 14515 is labeled.
+------------------------------------------------------------------------
+Tuple 70006 is sampled.
+Tuple 70006 is labeled.
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+--------------Propagating User Labels Through the Clusters--------------
+------------------------------------------------------------------------
+The number of labeled data cells increased from 300 to 2604343.
+------------------------------------------------------------------------
+---------------Training and Testing Classification Models---------------
+------------------------------------------------------------------------
+A classifier is trained and applied on column 0.
+A classifier is trained and applied on column 1.
+A classifier is trained and applied on column 2.
+A classifier is trained and applied on column 3.
+A classifier is trained and applied on column 4.
+A classifier is trained and applied on column 5.
+A classifier is trained and applied on column 6.
+A classifier is trained and applied on column 7.
+A classifier is trained and applied on column 8.
+A classifier is trained and applied on column 9.
+A classifier is trained and applied on column 10.
+A classifier is trained and applied on column 11.
+A classifier is trained and applied on column 12.
+A classifier is trained and applied on column 13.
+A classifier is trained and applied on column 14.
+------------------------------------------------------------------------
+---------------------------Storing the Results--------------------------
+------------------------------------------------------------------------
+The results are stored in /home/aridal/raha/datasets/tax/raha-baran-results-tax/error-detection/detection.dataset.
+Raha's performance on tax:
+Precision = 1.00
+Recall = 0.94
+F1 = 0.97
+############################################################################ 
+
