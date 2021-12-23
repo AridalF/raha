@@ -61,7 +61,7 @@ class Detection:
         """
         self.LABELING_BUDGET = 20
         self.USER_LABELING_ACCURACY = 1.0
-        self.VERBOSE = False
+        self.VERBOSE = True
         self.SAVE_RESULTS = True
         self.CLUSTERING_BASED_SAMPLING = True
         self.STRATEGY_FILTERING = False
