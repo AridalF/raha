@@ -45,9 +45,17 @@ import raha
 import time
 from datetime import timedelta
 
+from dask_ml.cluster import KMeans
+
 from memory_profiler import profile
 
 from dask import delayed
+
+from kneed import KneeLocator
+
+from sklearn.metrics import silhouette_score
+
+import numpy as np
 ###
 ########################################
 class Detection:
@@ -61,7 +69,7 @@ class Detection:
         """
         self.LABELING_BUDGET = 20
         self.USER_LABELING_ACCURACY = 1.0
-        self.VERBOSE = True
+        self.VERBOSE = False
         self.SAVE_RESULTS = True
         self.CLUSTERING_BASED_SAMPLING = True
         self.STRATEGY_FILTERING = False
@@ -246,8 +254,7 @@ class Detection:
             try:
                 clustering_model = scipy.cluster.hierarchy.linkage(feature_vectors, method="average", metric="cosine")
                 for k in clusters_k_c_ce:
-                    model_labels = [l - 1 for l in
-                                    scipy.cluster.hierarchy.fcluster(clustering_model, k, criterion="maxclust")]
+                    model_labels = [l - 1 for l in scipy.cluster.hierarchy.fcluster(clustering_model, k, criterion="maxclust")]
                     for index, c in enumerate(model_labels):
                         if c not in clusters_k_c_ce[k]:
                             clusters_k_c_ce[k][c] = {}
@@ -263,7 +270,7 @@ class Detection:
                                range(2, self.LABELING_BUDGET + 2)}
         d.cells_clusters_k_j_ce = {k: {j: clustering_results[j][1][k] for j in range(d.dataframe.shape[1])} for k in
                                    range(2, self.LABELING_BUDGET + 2)}
-
+    #@profile
     def build_clusters_kmeans_lb(self, d):
         """
         This method builds clusters.
@@ -271,12 +278,13 @@ class Detection:
         clustering_results = []
         for j in range(d.dataframe.shape[1]):
             feature_vectors = d.column_features[j]
-            clusters_k_c_ce = {k: {} for k in range(2, self.LABELING_BUDGET + 2)}
-            cells_clusters_k_ce = {k: {} for k in range(2, self.LABELING_BUDGET + 2)}
+            clusters_k_c_ce = {k: {} for k in range(2, self.LABELING_BUDGET + 2 + 1)}
+            cells_clusters_k_ce = {k: {} for k in range(2, self.LABELING_BUDGET + 2 + 1)}
             try:
+                #model_labels = [l - 1 for l in dask_ml.cluster.KMeans(n_clusters=k, init='k-means||', init_max_iter=2, oversampling_factor=10).fit(feature_vectors)]
                 for k in clusters_k_c_ce:
                     #model_labels = [l - 1 for l in (delayed)(dask_ml.cluster.KMeans)(n_clusters=k, init='k-means||', init_max_iter=2, oversampling_factor=10).fit(feature_vectors)]
-                    model_labels = [l - 1 for l in dask_ml.cluster.KMeans(n_clusters=k, init='k-means++', init_max_iter=2, oversampling_factor=10).fit(feature_vectors)]
+                    model_labels = [l - 1 for l in dask_ml.cluster.KMeans(n_clusters=k, init='k-means||', init_max_iter=2, oversampling_factor=10).fit(feature_vectors)]
                     for index, c in enumerate(model_labels):
                         if c not in clusters_k_c_ce[k]:
                             clusters_k_c_ce[k][c] = {}
@@ -289,10 +297,11 @@ class Detection:
                 print("A KMeans clustering model is built for column {}.".format(j))
             clustering_results.append([clusters_k_c_ce, cells_clusters_k_ce])
         d.clusters_k_j_c_ce = {k: {j: clustering_results[j][0][k] for j in range(d.dataframe.shape[1])} for k in
-                               range(2, self.LABELING_BUDGET + 2)}
+                               range(2, self.LABELING_BUDGET + 2 + 1)}
         d.cells_clusters_k_j_ce = {k: {j: clustering_results[j][1][k] for j in range(d.dataframe.shape[1])} for k in
-                                   range(2, self.LABELING_BUDGET + 2)}
+                                   range(2, self.LABELING_BUDGET + 2 + 1)}
 
+    #@profile
     def build_clusters_birch_lb(self, d):
         """
         This method builds clusters.
@@ -300,12 +309,12 @@ class Detection:
         clustering_results = []
         for j in range(d.dataframe.shape[1]):
             feature_vectors = d.column_features[j]
-            clusters_k_c_ce = {k: {} for k in range(2, self.LABELING_BUDGET + 2)}
-            cells_clusters_k_ce = {k: {} for k in range(2, self.LABELING_BUDGET + 2)}
+            clusters_k_c_ce = {k: {} for k in range(2, self.LABELING_BUDGET + 2 + 1)}
+            cells_clusters_k_ce = {k: {} for k in range(2, self.LABELING_BUDGET + 2 + 1)}
             try:
                 for k in clusters_k_c_ce:
-                    model_labels = [l - 1 for l in (delayed)(sklearn.cluster.Birch)(branching_factor=50, n_clusters = k, threshold = 1.5).fit_predict(feature_vectors)]
-                    #model_labels = [l - 1 for l in sklearn.cluster.Birch(branching_factor=50, n_clusters = k, threshold = 1.5).fit_predict(feature_vectors)]
+                    #model_labels = [l - 1 for l in (delayed)(sklearn.cluster.Birch)(branching_factor=50, n_clusters = k, threshold = 1.5).fit_predict(feature_vectors)]
+                    model_labels = [l - 1 for l in sklearn.cluster.Birch(branching_factor=50, n_clusters = k, threshold = 1.5).fit_predict(feature_vectors)]
                     for index, c in enumerate(model_labels):
                         if c not in clusters_k_c_ce[k]:
                             clusters_k_c_ce[k][c] = {}
@@ -318,40 +327,47 @@ class Detection:
                 print("A Birch clustering model is built for column {}.".format(j))
             clustering_results.append([clusters_k_c_ce, cells_clusters_k_ce])
         d.clusters_k_j_c_ce = {k: {j: clustering_results[j][0][k] for j in range(d.dataframe.shape[1])} for k in
-                               range(2, self.LABELING_BUDGET + 2)}
+                               range(2, self.LABELING_BUDGET + 2 + 1)}
         d.cells_clusters_k_j_ce = {k: {j: clustering_results[j][1][k] for j in range(d.dataframe.shape[1])} for k in
-                                   range(2, self.LABELING_BUDGET + 2)}
+                                   range(2, self.LABELING_BUDGET + 2 + 1)}
 
-
+    #Running Kmeans 10 times with different cluster number to find the best c n.
     def elbow_method_sse(self, features):
         sse=[]
-        for l in range(1, 10):
-            km = sklearn.cluster.KMeans(n_clusters=l)
+        for l in range(2, 20):
+            km = KMeans(n_clusters=l, init='k-means||', init_max_iter=2, oversampling_factor=10)
             km.fit(features)
             sse.append(km.inertia_)
         return sse
 
     def optimal_k(self, sse):
-        sse_copy=sse
-        sse_copy.sort(reverse=True)
-        print(sse_copy)
-        optimum_k=sse_copy.index(sse_copy[2])
+        #sse_copy=sse
+        #sse_copy.sort(reverse=True)
+        #print(sse_copy)
+        #optimum_k=sse_copy.index(sse_copy[3])
+        x = range(1, len(sse)+1)
+        kn = KneeLocator(x, sse, curve='convex', direction='decreasing')
+        optimum_k = kn.knee
+        #print(kn.knee)
         return optimum_k
 
 
+    #Clustering with k-means using the elbow method
+    #@profile
     def build_clusters_kmeans_elbow_m(self, d):
             clustering_results = []  # creating a empty list to addd the results
             for j in range(d.dataframe.shape[1]):  # running loop for the number of columns in data
                 feature_vectors = d.column_features[j]  # selecting one by one feature (column) for the processing
-                clusters_k_c_ce = {k: {} for k in range(2, self.LABELING_BUDGET + 2)} # Creating dictionary for 20 as per Label Budget
-                cells_clusters_k_ce = {k: {} for k in range(2, self.LABELING_BUDGET + 2)}
+                #clusters_k_c_ce = {k: {} for k in range(2, self.LABELING_BUDGET + 2 + 1)} # Creating dictionary for 20 as per Label Budget
+                #cells_clusters_k_ce = {k: {} for k in range(2, self.LABELING_BUDGET + 2 + 1)}
                 inter_intertia=self.elbow_method_sse(feature_vectors)
-                print(inter_intertia)
                 elbow_method_k=self.optimal_k(inter_intertia)
-                print(elbow_method_k)
+                print("Number of clusters using the Elbow method for column {} is = ".format(j) , elbow_method_k)
+                clusters_k_c_ce = {k: {} for k in range(2, elbow_method_k + + 2 + 1)} 
+                cells_clusters_k_ce = {k: {} for k in range(2, elbow_method_k + + 2 + 1)}
                 try:
+                    model_labels = [l - 1 for l in dask_ml.cluster.KMeans(n_clusters=elbow_method_k, init='k-means||', init_max_iter=2, oversampling_factor=10).fit(feature_vectors)]
                     for k in clusters_k_c_ce:
-                        model_labels = [l - 1 for l in sklearn.cluster.KMeans(n_clusters=elbow_method_k).fit_predict(feature_vectors)]
                         for index, c in enumerate(model_labels):
                             if c not in clusters_k_c_ce[k]:
                                 clusters_k_c_ce[k][c] = {}
@@ -364,9 +380,106 @@ class Detection:
                     print("K means clustering using the Elbow method model is built for column {}.".format(j))
                 clustering_results.append([clusters_k_c_ce, cells_clusters_k_ce])
             d.clusters_k_j_c_ce = {k: {j: clustering_results[j][0][k] for j in range(d.dataframe.shape[1])} for k in
-                                range(2, self.LABELING_BUDGET + 2)}
+                                range(2, 2 + 2 )}
             d.cells_clusters_k_j_ce = {k: {j: clustering_results[j][1][k] for j in range(d.dataframe.shape[1])} for k in
-                                    range(2, self.LABELING_BUDGET + 2)}
+                                    range(2, 2 + 2)}
+
+    #Running birch 10 times with different cluster number to find the best c n.
+    def elbow_method_sse_b(self, features):
+        sse=[]
+        for l in range(1, 10):
+            km = sklearn.cluster.Birch(branching_factor=50, n_clusters = l, threshold = 1.5)
+            km.fit_predict(features)
+            sse.append(km)
+        return sse
+
+    def optimal_k_b(self, sse):
+        x = range(1, len(sse)+1)
+        kn = KneeLocator(x, sse, curve='convex', direction='decreasing')
+        optimum_k = kn.knee
+        return optimum_k
+
+    #Clustering with Birch using the elbow method
+    def build_clusters_birch_elbow_m(self, d):
+            clustering_results = []  # creating a empty list to addd the results
+            for j in range(d.dataframe.shape[1]):  # running loop for the number of columns in data
+                feature_vectors = d.column_features[j]  # selecting one by one feature (column) for the processing
+                #clusters_k_c_ce = {k: {} for k in range(2, self.LABELING_BUDGET + 2 + 1)} # Creating dictionary for 20 as per Label Budget
+                #cells_clusters_k_ce = {k: {} for k in range(2, self.LABELING_BUDGET + 2 + 1)}
+                inter_intertia=self.elbow_method_sse_b(feature_vectors)
+                elbow_method_k=self.optimal_k_b(inter_intertia)
+                print("Elbow method k = ", elbow_method_k)
+                clusters_k_c_ce = {k: {} for k in range(2, elbow_method_k + 1)} # Creating dictionary for 20 as per Label Budget
+                cells_clusters_k_ce = {k: {} for k in range(2, elbow_method_k + 1)}
+                try:
+                    model_labels = [l - 1 for l in (delayed)(sklearn.cluster.Birch)(branching_factor=50, n_clusters = k, threshold = 1.5).fit_predict(feature_vectors)]
+                    for k in clusters_k_c_ce:
+                        for index, c in enumerate(model_labels):
+                            if c not in clusters_k_c_ce[k]:
+                                clusters_k_c_ce[k][c] = {}
+                            cell = (index, j)
+                            clusters_k_c_ce[k][c][cell] = 1
+                            cells_clusters_k_ce[k][cell] = c
+                except:
+                    pass
+                if self.VERBOSE:
+                    print("K means clustering using the Elbow method model is built for column {}.".format(j))
+                clustering_results.append([clusters_k_c_ce, cells_clusters_k_ce])
+            d.clusters_k_j_c_ce = {k: {j: clustering_results[j][0][k] for j in range(d.dataframe.shape[1])} for k in
+                                range(2, elbow_method_k + 1)}
+            d.cells_clusters_k_j_ce = {k: {j: clustering_results[j][1][k] for j in range(d.dataframe.shape[1])} for k in
+                                    range(2, elbow_method_k + 1)}
+
+    def sil_score_kmeans(self, feature_vectors):
+        #coeffs = []
+        #for n_clusters in range(1, 10):
+        #    clusterer = KMeans(n_clusters=n_clusters, init='k-means||', init_max_iter=2, oversampling_factor=10)
+        #    preds = clusterer.fit(feature_vectors)
+            #centers = clusterer.cluster_centers_
+        #    sil_coeff = silhouette_score(feature_vectors, preds)
+            #print("For n_clusters = {}, silhouette score is {})".format(n_clusters, score))
+        #    coeffs.append(sil_coeff)
+        #coeffs=np.array(coeffs)
+        #best_k = np.argmax(coeffs)+2
+        #return best_k
+        kmeans_per_k = [KMeans(n_clusters=k, init='k-means||', init_max_iter=2, oversampling_factor=10).fit(feature_vectors) for k in range(2, 20)]
+        silhouette_scores = [silhouette_score(feature_vectors, model.labels_) for model in kmeans_per_k[1:]]
+        sc = np.array(silhouette_scores)
+        print(sc)
+        best_k = np.argmax(sc)+2
+        return best_k
+
+    #building clusters using silhouette score to find the optimal number of clusters.    
+    #@profile
+    def build_clusters_kmeans_sil_score(self, d):
+        clustering_results = []  # creating a empty list to addd the results
+        ss_km = 1 #silhouette score for kmeans
+        for j in range(d.dataframe.shape[1]):  # running loop for the number of columns in data
+                feature_vectors = d.column_features[j]  # selecting one by one feature (column) for the processing
+                #clusters_k_c_ce = {k: {} for k in range(2, self.LABELING_BUDGET + 2 + 1)} # Creating dictionary for 20 as per Label Budget
+                #cells_clusters_k_ce = {k: {} for k in range(2, self.LABELING_BUDGET + 2 + 1)}
+                ss_km=self.sil_score_kmeans(feature_vectors)
+                print("Number of clusters using silhouette score for column {} is = ".format(j), ss_km)
+                clusters_k_c_ce = {k: {} for k in range(2, ss_km+2)} # Creating dictionary for 20 as per Label Budget
+                cells_clusters_k_ce = {k: {} for k in range(2, ss_km+2)}
+                try:
+                    model_labels = [l - 1 for l in dask_ml.cluster.KMeans(n_clusters=ss_km, init='k-means||', init_max_iter=2, oversampling_factor=10).fit(feature_vectors)]
+                    for k in clusters_k_c_ce:
+                        for index, c in enumerate(model_labels):
+                            if c not in clusters_k_c_ce[k]:
+                                clusters_k_c_ce[k][c] = {}
+                            cell = (index, j)
+                            clusters_k_c_ce[k][c][cell] = 1
+                            cells_clusters_k_ce[k][cell] = c
+                except:
+                    pass
+                if self.VERBOSE:
+                    print("K means clustering using the silhouette score method model is built for column {}.".format(j))
+                clustering_results.append([clusters_k_c_ce, cells_clusters_k_ce])
+        d.clusters_k_j_c_ce = {k: {j: clustering_results[j][0][k] for j in range(d.dataframe.shape[1])} for k in
+                               range(2, 2 + 2)}
+        d.cells_clusters_k_j_ce = {k: {j: clustering_results[j][1][k] for j in range(d.dataframe.shape[1])} for k in
+                                   range(2, 2 + 2)}
 
 
     def sample_tuple(self, d):
@@ -374,7 +487,9 @@ class Detection:
         This method samples a tuple.
         """
         # --------------------Calculating Number of Labels per Clusters--------------------
-        k = len(d.labeled_tuples) + 2
+        k=2 #LABELING_BUDGET, check tuple scores ..
+        #print(len(d.labeled_tuples))
+        #k = len(d.labeled_tuples) + 2 +1 # change the k + 1
         for j in range(d.dataframe.shape[1]):
             for c in d.clusters_k_j_c_ce[k][j]:
                 d.labels_per_cluster[(j, c)] = {cell: d.labeled_cells[cell][0] for cell in d.clusters_k_j_c_ce[k][j][c] if
@@ -420,7 +535,8 @@ class Detection:
         This method propagates labels.
         """
         d.extended_labeled_cells = {cell: d.labeled_cells[cell][0] for cell in d.labeled_cells}
-        k = len(d.labeled_tuples) + 2 - 1
+        k = 2
+        #k = len(d.labeled_tuples) + 2 - 1
         for j in range(d.dataframe.shape[1]):
             cell = (d.sampled_tuple, j)
             if cell in d.cells_clusters_k_j_ce[k][j]:
@@ -518,7 +634,7 @@ class Detection:
                   "------------------------------------------------------------------------")
         start_time = time.time()
         #self.build_clusters(d)
-        self.build_clusters_kmeans_lb(d)
+        self.build_clusters_kmeans_elbow_m(d)
         elapsed_time_secs = time.time() - start_time
         #msg = "Execution for build clusters took: %s secs (Wall clock time)" % timedelta(seconds=round(elapsed_time_secs), microseconds=elapsed_time_secs)
         msg = "Execution for build clusters took: %s secs" % elapsed_time_secs
@@ -557,20 +673,25 @@ class Detection:
 
 ########################################
 if __name__ == "__main__":
-    dataset_name = "tax"
+    dataset_name = "flights"
     dataset_dictionary = {
         "name": dataset_name,
         "path": os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, "datasets", dataset_name, "dirty.csv")),
         "clean_path": os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, "datasets", dataset_name, "clean.csv"))
     }
-    for x in range(1, 11):
-        print("################################ Run = ", x , "#################################")
-        app = Detection()
-        detection_dictionary = app.run(dataset_dictionary)
-        data = raha.dataset.Dataset(dataset_dictionary)
-        p, r, f = data.get_data_cleaning_evaluation(detection_dictionary)[:3]
-        print("Raha's performance on {}:\nPrecision = {:.2f}\nRecall = {:.2f}\nF1 = {:.2f}".format(data.name, p, r, f))
-        print("############################################################################ ")
+    app = Detection()
+    detection_dictionary = app.run(dataset_dictionary)
+    data = raha.dataset.Dataset(dataset_dictionary)
+    p, r, f = data.get_data_cleaning_evaluation(detection_dictionary)[:3]
+    print("Raha's performance on {}:\nPrecision = {:.2f}\nRecall = {:.2f}\nF1 = {:.2f}".format(data.name, p, r, f))
+    #for x in range(1, 11):
+    #    print("################################ Run = ", x , "#################################")
+    #    app = Detection()
+    #    detection_dictionary = app.run(dataset_dictionary)
+    #    data = raha.dataset.Dataset(dataset_dictionary)
+    #    p, r, f = data.get_data_cleaning_evaluation(detection_dictionary)[:3]
+    #    print("Raha's performance on {}:\nPrecision = {:.2f}\nRecall = {:.2f}\nF1 = {:.2f}".format(data.name, p, r, f))
+    #    print("############################################################################ ")
     # --------------------
     # app.STRATEGY_FILTERING = True
     # app.HISTORICAL_DATASETS = [
