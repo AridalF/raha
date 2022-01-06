@@ -1,0 +1,25 @@
+I just load strategies' results as they have already been run on the dataset!
+Number of clusters using the Elbow method for column 0 is =  5
+/home/aridal/.local/lib/python3.8/site-packages/dask_ml/cluster/k_means.py:478: ConvergenceWarning: Number of distinct clusters (17) found smaller than n_clusters (18). Possibly due to duplicate points in X.
+  km.fit(centers)
+Found fewer than 19 clusters in init (found 17).
+Number of clusters using the Elbow method for column 1 is =  8
+Found fewer than 16 clusters in init (found 11).
+Number of clusters using the Elbow method for column 2 is =  2
+Found fewer than 13 clusters in init (found 12).
+Number of clusters using the Elbow method for column 3 is =  3
+/home/aridal/.local/lib/python3.8/site-packages/dask_ml/cluster/k_means.py:478: ConvergenceWarning: Number of distinct clusters (16) found smaller than n_clusters (18). Possibly due to duplicate points in X.
+  km.fit(centers)
+Found fewer than 19 clusters in init (found 17).
+Number of clusters using the Elbow method for column 4 is =  6
+/home/aridal/.local/lib/python3.8/site-packages/dask_ml/cluster/k_means.py:478: ConvergenceWarning: Number of distinct clusters (16) found smaller than n_clusters (17). Possibly due to duplicate points in X.
+  km.fit(centers)
+/home/aridal/.local/lib/python3.8/site-packages/dask_ml/cluster/k_means.py:478: ConvergenceWarning: Number of distinct clusters (18) found smaller than n_clusters (19). Possibly due to duplicate points in X.
+  km.fit(centers)
+Number of clusters using the Elbow method for column 5 is =  3
+Number of clusters using the Elbow method for column 6 is =  6
+Execution for build clusters took: 102.45169973373413 secs
+Raha's performance on flights:
+Precision = 0.86
+Recall = 0.79
+F1 = 0.82

@@ -673,7 +673,7 @@ class Detection:
 
 ########################################
 if __name__ == "__main__":
-    dataset_name = "flights"
+    dataset_name = "beers"
     dataset_dictionary = {
         "name": dataset_name,
         "path": os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, "datasets", dataset_name, "dirty.csv")),
